@@ -103,3 +103,49 @@ Do NOT write notes for the user directly. Guide them to articulate note content 
 - "skip" → mark current content as "skipped", move to the next learning unit
 - "summarize" / "notes" → immediately compile learned content into notes
 - "pause" → save progress, end current session
+
+## Exercise Workflow
+
+When a section includes exercises, switch from the reading workflow to the exercise workflow below.
+
+### Classification and Handling
+
+| Type | Approach |
+|------|----------|
+| Thought / find-the-bug | Present problem + guiding questions → user answers verbally → judge correctness, correct misconceptions |
+| Read-the-code / trace execution | Present code → user traces execution by hand → confirm or correct → optionally verify with code |
+| Programming | Present problem + sample input/output + guiding questions → user writes code → review |
+| Proof / math | Present problem + hints → user reasons on paper or verbally → verify logic |
+
+### Selection
+
+- After reading the full exercise list, classify each by learning value and propose a shortlist to the user
+- Must-do: recursion understanding, algorithm proofs, classic algorithm variants, performance experiments
+- Skip: pure formatting exercises, repetitive drills on the same concept, drawing/visualization exercises
+- User confirms the final selection before starting
+
+### Programming Exercises
+
+- Always provide sample input and expected output so the user knows what to aim for
+- Provide scaffolding (e.g. pre-filled arrays, class skeleton) when the exercise requires it
+- User writes the logic; do NOT write it for them
+- After user submits code: point out bugs by location, do NOT give the fix directly — let the user correct it
+- If user is stuck after 2 rounds of hints, give a more direct hint but still not the full answer
+
+### Thought / Trace Exercises
+
+- Present the problem, then pose 1-2 guiding questions to direct the user's thinking
+- User answers first, then judge: correct → briefly confirm and move on; wrong → guide with sub-questions
+- For trace exercises: if the user's trace diverges from correct execution, point out the exact step where it went wrong
+
+### Knowledge Gaps
+
+- When an exercise reveals a concept missing from the section notes, add it to the corresponding location in the existing notes file (do NOT create separate exercise notes)
+- Ask the user before adding, or add when they explicitly request it
+
+### Guiding Principles
+
+- **Guide, don't do**: never give answers directly; use sub-questions to lead the user there
+- **One bug at a time**: when reviewing code, point out the most critical issue first, wait for the user to fix it before mentioning the next
+- **User's pace**: if the user asks for the problem statement again, repeat it without judgment
+- **Proof exercises are not skippable**: understanding "why it works" is as important as "how to code it"
